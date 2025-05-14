@@ -202,7 +202,7 @@
   .text-box{
     text-align: left;
     text-wrap: flex;
-    font-size: 32px;
+    font-size: 30px;
     max-width: 1300px;
     padding: 10px;
 
@@ -237,7 +237,7 @@
     justify-content: center;
     align-items: center;
     flex-grow: 1; 
-    width: 80%;
+    width: 70%;
     margin-top: 50px;
     margin-bottom: 2px;
   }
@@ -300,7 +300,7 @@
 
   .sabias-que h4 {
     color: #cc4b4b;
-    font-size: 40px;
+    font-size: 30px;
     margin-bottom: 12px;
   }
 
