@@ -3,32 +3,22 @@
   /* Importamos d3 para tenerlo disponible */
   import * as d3 from 'd3'
   import Helado from './Helado.svelte';
+  import Leyenda from './Leyenda.svelte';
   let numbers = [24, 33, 42, 54, 63, 71, 77, 87, 92, 98];
   let numbers2 = [23, 35, 45, 56, 50, 43, 38, 32, 28, 25];
-  let data2 = [
-    {url: 'Group 5.svg', valor: 5.8},
-    {url: 'Group 4.svg', valor: 6.0},
-    {url: 'Group 6.svg', valor: 6.2},
-    {url: 'Group 9.svg', valor: 6.4},
-    {url: 'Group 8.svg', valor: 6.5},
-    {url: 'Group 10.svg', valor: 6.7},
-    {url: 'Group 13.svg', valor: 6.9},
-    {url: 'Group 12.svg', valor: 7.0},
-    {url: 'Group 14.svg', valor: 9.0},
-    {url: 'Group 17.svg', valor: 10.0} ];
   let tabla = [
-    {anio: 2015, consumo: 2.4, industrial: 2.3}, 
-    {anio: 2016, consumo: 3.3, industrial: 3.5}, 
-    {anio: 2017, consumo: 4.2, industrial: 4.5}, 
-    {anio: 2018, consumo: 5.4, industrial: 5.6}, 
-    {anio: 2019, consumo: 6.3, industrial: 5.0}, 
-    {anio: 2020, consumo: 7.1, industrial: 4.3}, 
-    {anio: 2021, consumo: 7.7, industrial: 3.8}, 
-    {anio: 2022, consumo: 8.7, industrial: 3.2}, 
-    {anio: 2023, consumo: 9.2, industrial: 2.8}, 
-    {anio: 2024, consumo: 9.8, industrial: 2.5} ];
-
-    let tabla2 = [
+    {anio: 2015, artesanal: 2.4}, 
+    {anio: 2016, artesanal: 3.3}, 
+    {anio: 2017, artesanal: 4.2}, 
+    {anio: 2018, artesanal: 5.4}, 
+    {anio: 2019, artesanal: 6.3}, 
+    {anio: 2020, artesanal: 7.1}, 
+    {anio: 2021, artesanal: 7.7}, 
+    {anio: 2022, artesanal: 8.7}, 
+    {anio: 2023, artesanal: 9.2}, 
+    {anio: 2024, artesanal: 9.8}, 
+  ];
+  let tabla2 = [
     {anio: 2015, industrial: 2.3}, 
     {anio: 2016, industrial: 3.5}, 
     {anio: 2017, industrial: 4.5}, 
@@ -65,10 +55,11 @@
 
   <div class= "tamaños-container">
     <div class="titulo-helados">
-      <p> El helado artesanal conquista el paladar y el mercado </p>
+      <p> El helado <span style = "color: #69B9FF">artesanal</span> conquista el paladar y el mercado </p>
     </div>
+    <Leyenda />
     <div class = "helados-wrapper">
-      <Helado numbers={numbers} />
+      <Helado tabla={tabla} />
     </div>
     <div class = "text-box"> 
       <p> <b>El crecimiento del helado artesanal, visualizado en cada cucurucho</b> </p>
@@ -79,10 +70,10 @@
     </div>
 
     <div class="titulo-helados">
-      <p> Helado industrial: éxito fugaz, caída inevitable </p>
+      <p> Helado <span style="color: #DE5D5D">industrial</span>: éxito fugaz, caída inevitable </p>
     </div>
     <div class = "helados-wrapper">
-      <Helado numbers2={numbers2} />
+      <Helado tabla2={tabla2} />
     </div>
     <div class = "text-box"> 
       <p>  <b>Un consumo que tocó su techo y luego descendió </b> </p>
@@ -96,7 +87,7 @@
   </div>
 
   <div class = "grafico-container">
-    <h3 class="subtitle"> A partir del 2018 el helado artesanal comienza a superar al industrial </h3>
+    <h3 class="subtitle"> A partir del 2018 el helado <span style = "color: #69B9FF">artesanal</span> comienza a superar al <span style="color: #DE5D5D">industrial</span> </h3>
     <div class = "graficos">
       <iframe
       src="https://flo.uri.sh/story/3098431/embed"
@@ -120,7 +111,7 @@
   </div>
 
   <div class = "grafico-container">
-    <h3 class="subtitle"> La brecha se amplía: el consumo artesanal lidera con fuerza </h3>
+    <h3 class="subtitle"> La brecha se amplía: el consumo <span style = "color: #69B9FF">artesanal</span> lidera con fuerza </h3>
       <div class = "graficos">
         <iframe
         src="https://flo.uri.sh/story/3098462/embed"
@@ -187,7 +178,7 @@
     font-size: 55px; 
     font-weight: bold; 
     text-align: center; 
-    color: #ff6b6b; 
+    color: black; 
     margin-bottom: 10px; 
     margin-top: 20px;
   }
@@ -196,7 +187,7 @@
     font-size: 40px; 
     font-weight: 800; 
     text-align: center;
-    color: #f78181; 
+    color: black; 
     margin-bottom: 20px; 
   }
 
@@ -204,7 +195,7 @@
     font-size: 40px; 
     font-weight: bold; 
     text-align: center;
-    color: #f78181; 
+    color: black; 
     margin-bottom: 50px; 
   }
 
@@ -212,7 +203,7 @@
     text-align: left;
     text-wrap: flex;
     font-size: 32px;
-    max-width: 90%;
+    max-width: 1300px;
     padding: 10px;
 
   }
@@ -226,6 +217,7 @@
     margin-top: 20px;
     padding: 0;
     margin-bottom: 10px;
+    width: auto;
   }
 
   .grafico-container {
@@ -245,7 +237,7 @@
     justify-content: center;
     align-items: center;
     flex-grow: 1; 
-    width: 100%;
+    width: 80%;
     margin-top: 50px;
     margin-bottom: 2px;
   }
@@ -266,7 +258,7 @@
 
   .categoria {
     font-weight: bold;
-    color: #d66;
+    color: black;
   }
 
   .footer {
