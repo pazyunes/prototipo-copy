@@ -44,5 +44,5 @@ h1 {
   margin-top: 0;
 }
 * {
-  box-sizing: border-box;
+  box-sizing: content-box;
 }
