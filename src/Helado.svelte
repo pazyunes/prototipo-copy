@@ -1,168 +1,192 @@
 
 <script>
+    import { schemeTableau10 } from 'd3';
   export let title = "";
   export let numbers = [];
-  export let tabla = [];
   export let numbers2 = [];
-  export let tabla2 = [];
   import { scaleLinear } from 'd3-scale';
+  //export let tabla = [];
 
   // Escalas dinámicas
-  const escalaWidth = scaleLinear().domain([24, 98]).range([32, 104.5]);
-  const escalaHeight = scaleLinear().domain([24, 98]).range([36.5, 228]);
+  const escalaWidth = scaleLinear().domain([24, 98]).range([56, 201]);
+  const escalaHeight = scaleLinear().domain([24, 98]).range([63, 426]);
   const escalaOpacity = scaleLinear().domain([24, 98]).range([0.14, 1]);
   const escalaTranslateY = scaleLinear()
-  .domain([24, 33, 42, 54, 63, 71, 77, 87, 92, 98])  // valores de n
-  .range([2, -3, -12, -5, -16, -24, -48, -62, -72, -87]);  // valores top
-
-  // Función para obtener el path de imagen según el número
-  function getImageSrc(n) {
-    if (0 <= n && n <= 24) return "./images/Group 5.svg";
-    if (24 < n && n <= 33) return "./images/Group 4.svg";
-    if (33 < n && n <= 42) return "./images/Group 6.svg";
-    if (42 < n && n <= 54) return "./images/Group 9.svg";
-    if (54 < n && n <= 63) return "./images/Group 8.svg";
-    if (63 < n && n <= 71) return "./images/Group 10.svg";
-    if (71 < n && n <= 77) return "./images/Group 13.svg";
-    if (77 < n && n <= 87) return "./images/Group 12.svg";
-    if (87 < n && n <= 92) return "./images/Group 14.svg";
-    if (92 < n && n <= 98) return "./images/Group 17.svg";
-    return ""; // valor por defecto
-  }
-
-  function getImageSrc2(k) {
-  if (k === 23) return "./images/Group 5.svg";
-  if (k === 25) return "./images/Group 4.svg";
-  if (k === 28) return "./images/Group 6.svg";
-  if (k === 32) return "./images/Group 9.svg";
-  if (k === 35) return "./images/Group 8.svg";
-  if (k === 38) return "./images/Group 10.svg";
-  if (k === 43) return "./images/Group 13.svg";
-  if (k === 45) return "./images/Group 12.svg";
-  if (k === 50) return "./images/Group 14.svg";
-  if (k === 56) return "./images/Group 17.svg";
-  return ""; // en caso de que no esté en la lista
-}
-</script>  
+  .domain([24, 33, 42, 54, 63, 71, 77, 87, 92, 98])  
+  .range([2, -15, -32, -59, -75, -92, -126, -140, -152, -166]);
+  const color = scaleLinear().domain([24, 98]).range(["white", "#E36567"]);
+  const escalaTranslateY2 = scaleLinear()
+  .domain([23, 25, 28, 32, 35, 38, 43, 45, 50, 56])  
+  .range([44, 6, -8, -33, -32, -66, -100, -112, -132, -144]);
+  </script>  
 
 <h3 class="headline">{title}</h3>
 <div class="helados-container">
     {#each numbers as n}
-  {#if 24 <= n && n <= 98}
-    <div class="helado-wrapper">
-      <img 
-        src="{getImageSrc(n)}"
-        alt="helado-img"
-        style="
-          width: {escalaWidth(n)}px; 
-          height: {escalaHeight(n)}px; 
-          opacity: {escalaOpacity(n)};
-          transform: translateY({escalaTranslateY(n)}px);
-        "
-      />
+    <div
+      class="helado-wrapper"
+      style="
+        transform: translateY({escalaTranslateY(n)}px);
+      "
+    >
+    {#if 24<=n && n <=98}
+      {#if n == 24}
+      <svg width="56" height="63" viewBox="0 0 56 63" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <ellipse cx="28" cy="20" rx="28" ry="20" fill="{color(n)}"/>
+        <ellipse cx="28" cy="28.5" rx="28" ry="3.5" fill="#D7B969"/>
+        <ellipse cx="28" cy="36" rx="28" ry="11" fill="#D7B969"/>
+        <rect x="6" y="38" width="44" height="25" rx="3" fill="#D7B969"/>
+        </svg>   
+      {/if}
+
+      {#if n == 33}
+      <svg width="56" height="97" viewBox="0 0 56 97" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <ellipse cx="28" cy="20" rx="28" ry="20" fill="{color(n)}"/>
+        <ellipse cx="28" cy="33.4474" rx="28" ry="6.44737" fill="#D7B969"/>
+        <ellipse cx="28" cy="47.2632" rx="28" ry="20.2632" fill="#D7B969"/>
+        <rect x="6" y="50.9474" width="44" height="46.0526" rx="3" fill="#D7B969"/>
+        </svg>
+        {/if} 
+      {#if n == 42}  
+      <svg width="56" height="131" viewBox="0 0 56 131" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <ellipse cx="28" cy="20.4688" rx="28" ry="20.4688" fill="{color(n)}"/>
+        <ellipse cx="28" cy="36.2243" rx="28" ry="9.61493" fill="#D7B969"/>
+        <ellipse cx="28" cy="56.8277" rx="28" ry="30.2183" fill="#D7B969"/>
+        <rect x="6" y="62.322" width="44" height="68.678" rx="3" fill="#D7B969"/>
+        </svg>
+        {/if}
+        {#if n == 54}
+        <svg width="125" height="183" viewBox="0 0 125 183" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <ellipse cx="62" cy="40.5" rx="57" ry="40.5" fill="{color(n)}"/>
+            <ellipse cx="62.5" cy="61.3421" rx="62.5" ry="12.3421" fill="#D7B969"/>
+            <rect x="14.0977" y="61.3422" width="95.8647" height="121.658" rx="3" fill="#D7B969"/>
+            </svg>
+        {/if}
+        {#if n == 63}
+        <svg width="125" height="217" viewBox="0 0 125 217" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <ellipse cx="62" cy="40.6875" rx="57" ry="40.6875" fill="{color(n)}"/>
+            <ellipse cx="62.5" cy="65.5917" rx="62.5" ry="15.3603" fill="#D7B969"/>
+            <rect x="14.0977" y="65.5918" width="95.8647" height="151.408" rx="3" fill="#D7B969"/>
+            </svg>
+        {/if}
+        {#if n == 71}
+        <svg width="125" height="251" viewBox="0 0 125 251" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <ellipse cx="63" cy="41.1559" rx="57" ry="41.1559" fill="{color(n)}"/>
+            <ellipse cx="62.5" cy="68.3258" rx="62.5" ry="18.5322" fill="#D7B969"/>
+            <rect x="14.0977" y="68.3258" width="95.8647" height="182.674" rx="3" fill="#D7B969"/>
+            </svg>
+        {/if}
+        {#if n == 77}
+        <svg width="201" height="324" viewBox="0 0 201 324" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <ellipse cx="99.7785" cy="62.9715" rx="87.7785" ry="62.9715" fill="{color(n)}"/>
+            <path d="M100.5 324L13.4644 88.5H187.536L100.5 324Z" fill="#D7B969"/>
+            </svg>
+        {/if}
+        {#if n == 87}
+        <svg width="201" height="358" viewBox="0 0 201 358" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <ellipse cx="100.778" cy="65.1555" rx="87.7785" ry="65.1555" fill="{color(n)}"/>
+            <path d="M100.5 358L13.4644 89.5H187.536L100.5 358Z" fill="#D7B969"/>
+            </svg>
+        {/if}
+        {#if n == 92}
+        <svg width="201" height="392" viewBox="0 0 201 392" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <ellipse cx="100.778" cy="70.489" rx="87.7785" ry="65.3038" fill="{color(n)}"/>
+            <path d="M100.5 392L13.4644 98H187.536L100.5 392Z" fill="#D7B969"/>
+            </svg>
+        {/if}
+        {#if n == 98}
+        <svg width="201" height="426" viewBox="0 0 201 426" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <ellipse cx="100.778" cy="77.8972" rx="87.7785" ry="65.4289" fill="{color(n)}"/>
+            <path d="M100.5 426L13.4644 106.5H187.536L100.5 426Z" fill="#D7B969"/>
+            </svg>
+        {/if}                                                            
+    {/if}
     </div>
-  {/if}
-{/each}
+  {/each}
+
 
 {#each numbers2 as k}
-    <div class="helado-wrapper">
+    <div
+      class="helado-wrapper"
+      style="
+        transform: translateY({escalaTranslateY2(k)}px);
+      "
+    >
         {#if 23 <= k && k <= 56}
             {#if k == 23}
-            <div class="pri"> 
-                <img class="small1" src="./images/Group 5.svg" alt="helado-img" />      
-            </div>
+            <svg width="56" height="63" viewBox="0 0 56 63" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <ellipse cx="28" cy="20" rx="28" ry="20" fill="{color(k)}"/>
+                <ellipse cx="28" cy="28.5" rx="28" ry="3.5" fill="#D7B969"/>
+                <ellipse cx="28" cy="36" rx="28" ry="11" fill="#D7B969"/>
+                <rect x="6" y="38" width="44" height="25" rx="3" fill="#D7B969"/>
+                </svg>   
             {/if}
             {#if k == 35}
-            <div class="quin"> 
-                <img class="medium2" src="./images/Group 8.svg" alt="helado-img" /> 
-            </div>
+            <svg width="125" height="217" viewBox="0 0 125 217" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <ellipse cx="62" cy="40.6875" rx="57" ry="40.6875" fill="{color(k)}"/>
+                <ellipse cx="62.5" cy="65.5917" rx="62.5" ry="15.3603" fill="#D7B969"/>
+                <rect x="14.0977" y="65.5918" width="95.8647" height="151.408" rx="3" fill="#D7B969"/>
+                </svg>
             {/if}
             {#if k == 45}
-            <div class="oct"> 
-                <img class="large2" src="./images/Group 12.svg" alt="helado-img" />  
-            </div>
+            <svg width="201" height="358" viewBox="0 0 201 358" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <ellipse cx="100.778" cy="65.1555" rx="87.7785" ry="65.1555" fill="{color(k)}"/>
+                <path d="M100.5 358L13.4644 89.5H187.536L100.5 358Z" fill="#D7B969"/>
+                </svg>
             {/if}
             {#if k == 56}
-            <div class="dec"> 
-                <img class="large4" src="./images/Group 17.svg" alt="helado-img" />  
-            </div>
+            <svg width="201" height="426" viewBox="0 0 201 426" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <ellipse cx="100.778" cy="77.8972" rx="87.7785" ry="65.4289" fill="{color(k)}"/>
+                <path d="M100.5 426L13.4644 106.5H187.536L100.5 426Z" fill="#D7B969"/>
+                </svg>
             {/if}
             {#if k == 50}
-            <div class="nov"> 
-                <img class="large3" src="./images/Group 14.svg" alt="helado-img" /> 
-            </div>
+            <svg width="201" height="392" viewBox="0 0 201 392" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <ellipse cx="100.778" cy="70.489" rx="87.7785" ry="65.3038" fill="{color(k)}"/>
+                <path d="M100.5 392L13.4644 98H187.536L100.5 392Z" fill="#D7B969"/>
+                </svg>
             {/if}
             {#if k == 43}
-            <div class="sept"> 
-                <img class="large1" src="./images/Group 13.svg" alt="helado-img" />  
-            </div>
+            <svg width="201" height="324" viewBox="0 0 201 324" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <ellipse cx="99.7785" cy="62.9715" rx="87.7785" ry="62.9715" fill="{color(k)}"/>
+                <path d="M100.5 324L13.4644 88.5H187.536L100.5 324Z" fill="#D7B969"/>
+                </svg>
             {/if}
             {#if k == 38}
-            <div class="sext"> 
-                <img class="medium3" src="./images/Group 10.svg" alt="helado-img" />   
-            </div>
+            <svg width="125" height="251" viewBox="0 0 125 251" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <ellipse cx="63" cy="41.1559" rx="57" ry="41.1559" fill="{color(k)}"/>
+                <ellipse cx="62.5" cy="68.3258" rx="62.5" ry="18.5322" fill="#D7B969"/>
+                <rect x="14.0977" y="68.3258" width="95.8647" height="182.674" rx="3" fill="#D7B969"/>
+                </svg>
             {/if}
             {#if k == 32}
-            <div class="cuar"> 
-                <img class="medium1" src="./images/Group 9.svg" alt="helado-img" /> 
-            </div>
+            <svg width="125" height="183" viewBox="0 0 125 183" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <ellipse cx="62" cy="40.5" rx="57" ry="40.5" fill="{color(k)}"/>
+                <ellipse cx="62.5" cy="61.3421" rx="62.5" ry="12.3421" fill="#D7B969"/>
+                <rect x="14.0977" y="61.3422" width="95.8647" height="121.658" rx="3" fill="#D7B969"/>
+                </svg>
             {/if}
             {#if k == 28}
-            <div class="ter"> 
-                <img class="small3" src="./images/Group 6.svg" alt="helado-img" /> 
-            </div>
+            <svg width="56" height="131" viewBox="0 0 56 131" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <ellipse cx="28" cy="20.4688" rx="28" ry="20.4688" fill="{color(k)}"/>
+                <ellipse cx="28" cy="36.2243" rx="28" ry="9.61493" fill="#D7B969"/>
+                <ellipse cx="28" cy="56.8277" rx="28" ry="30.2183" fill="#D7B969"/>
+                <rect x="6" y="62.322" width="44" height="68.678" rx="3" fill="#D7B969"/>
+                </svg>
             {/if}
             {#if k == 25}
-            <div class="seg">  
-                <img class="small2" src="./images/Group 4.svg" alt="helado-img" />     
-            </div>
+            <svg width="56" height="97" viewBox="0 0 56 97" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <ellipse cx="28" cy="20" rx="28" ry="20" fill="{color(k)}"/>
+                <ellipse cx="28" cy="33.4474" rx="28" ry="6.44737" fill="#D7B969"/>
+                <ellipse cx="28" cy="47.2632" rx="28" ry="20.2632" fill="#D7B969"/>
+                <rect x="6" y="50.9474" width="44" height="46.0526" rx="3" fill="#D7B969"/>
+                </svg>
             {/if}
 
         {/if}
     </div>
-    {/each}
+{/each}
 </div> 
-
-
-
-{#if tabla.length > 0}
-<table class="tabla">
-    <tbody>
-        <tr>
-            <th class="anio"> Año </th>
-            {#each tabla as dato}
-            <th class="anio">{dato.anio}</th>
-            {/each}
-        </tr>
-        <tr>
-            <td class="consumo"> Consumo per cápita (kg/año)</td>
-        {#each tabla as dato}
-            <td class="consumo">{dato.consumo}</td>
-        {/each}
-        </tr>
-    <tbody/>
-</table>
-{/if}
-
-{#if tabla2.length > 0}
-<table class="tabla">
-    <tbody>
-        <tr>
-            <th class="anio"> Año </th>
-            {#each tabla2 as dato}
-            <th class="anio">{dato.anio}</th>
-            {/each}
-        </tr>
-        <tr>
-            <td class="consumo"> Consumo per cápita (kg/año)</td>
-        {#each tabla2 as dato}
-            <td class="consumo">{dato.industrial}</td>
-        {/each}
-        </tr>
-    <tbody/>
-</table>
-{/if}
-
 
 
 <style>
@@ -170,124 +194,18 @@
       display: flex;
       align-items: center;
       justify-content: center;
-      margin-top: 10px;
+      margin-top: 40px;
     }
     .helado-wrapper {
       position: relative;
       width: auto;
+      height: auto;
       text-align: center;
       display: flex;
       align-items: center;
       justify-content: center;
       padding: 15px;
-      margin-bottom: 0;
-    }
-
-    .pri img {
-        width: 32px;
-        height: 36.5px;
-        opacity: 0.14;
-    }
-
-    .seg img {
-        width: 32px;
-        height: 42.5px;
-        position: relative;
-        top: -3px;
-        opacity: 0.2;
-    }
-
-    .ter img {
-        width: 32px;
-        height: 48px;
-        position: relative;
-        top: -5px;
-        opacity: 0.3;
-    }
-
-    .cuar img {
-        width: 77.5px;
-        height: 66px;
-        position: relative;
-        top: -14px;
-        opacity: 0.4;
-    }
-
-    .quin img {
-        width: 81.5px;
-        height: 82px;
-        position: relative;
-        top: -21px;
-        opacity: 0.5;
-    }
-
-    .sext img {
-        width: 81.5px;
-        height: 93px;
-        position: relative;
-        top: -26px;
-        opacity: 0.6;
-    }
-
-    .sept img {
-        width: 100.5px;
-        height: 161.5px;
-        position: relative;
-        top: -56px;
-        opacity: 0.7;
-    }
-
-    .oct img {
-        width: 100.5px;
-        height: 180.5px;
-        position: relative;
-        top: -62px;
-        opacity: 0.8;
-    }
-
-    .nov img {
-        width: 100.5px;
-        height: 197.5px;
-        position: relative;
-        top: -72px;
-        opacity: 0.9;
-    }
-
-    .dec img {
-        width: 104.5px;
-        height: 228px;
-        position: relative;
-        top: -87px;
-        opacity: 1;
+      margin-bottom: 10px;
     }  
-    .tabla {
-        width: auto;
-        border-collapse: collapse;
-        border-spacing: 20px 0; /* separación horizontal y vertical */
-        margin: 20px auto;
-        font-family: 'Merriweather', serif;
-        text-align: center;
-        font-size: 18px;
-    }
-
-    .tabla td{
-        padding: 35px;
-        padding-top: 5px;
-    }
-    .tabla th {
-        text-align: center; /* mantiene centrado */
-        padding-left: 10px; /* pero igual lo empuja un poquito */
-    }
-
-    .anio {
-        border-bottom: 2px solid #333; /* Línea continua debajo de los años */
-        padding-bottom: 4px;
-    }
-
-    .consumo {
-        color: #555;
-        font-weight: bold;
-    }
-
 </style>
     

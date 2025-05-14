@@ -65,14 +65,13 @@
 
   <div class= "tamaños-container">
     <div class="titulo-helados">
-      <h3> El helado artesanal conquista el paladar y el mercado </h3>
+      <p> El helado artesanal conquista el paladar y el mercado </p>
     </div>
-    <Helado tabla={tabla} />
     <div class = "helados-wrapper">
       <Helado numbers={numbers} />
     </div>
     <div class = "text-box"> 
-      <h3> <b>El crecimiento del helado artesanal, visualizado en cada cucurucho</b> </h3>
+      <p> <b>El crecimiento del helado artesanal, visualizado en cada cucurucho</b> </p>
       <p>A través de helados que aumentan progresivamente en tamaño y opacidad, este gráfico ilustra de forma visual y atractiva 
       el crecimiento sostenido del consumo per cápita de helado artesanal en los últimos años. La elección de cucuruchos más grandes 
       y nítidos representa cómo esta categoría fue ganando protagonismo en la preferencia de los consumidores, marcando una tendencia 
@@ -80,14 +79,13 @@
     </div>
 
     <div class="titulo-helados">
-      <h3> Helado industrial: éxito fugaz, caída inevitable </h3>
+      <p> Helado industrial: éxito fugaz, caída inevitable </p>
     </div>
-    <Helado tabla2={tabla2} />
     <div class = "helados-wrapper">
       <Helado numbers2={numbers2} />
     </div>
     <div class = "text-box"> 
-      <h3>  <b>Un consumo que tocó su techo y luego descendió </b> </h3>
+      <p>  <b>Un consumo que tocó su techo y luego descendió </b> </p>
       <p>El gráfico representa el consumo per cápita de helado industrial desde 2015 hasta 2024. Se observa un crecimiento 
         constante hasta alcanzar su punto máximo alrededor de 2019, seguido de una caída progresiva en los años posteriores. Esto 
         podría vincularse a cambios en las preferencias del consumidor, una mayor valorización del helado artesanal, o factores 
@@ -98,10 +96,10 @@
   </div>
 
   <div class = "grafico-container">
-    <h3 class="subtitle"> El punto de inflexión que redefinió las preferencias de consumo </h3>
+    <h3 class="subtitle"> A partir del 2018 el helado artesanal comienza a superar al industrial </h3>
     <div class = "graficos">
       <iframe
-      src="https://flo.uri.sh/visualisation/22562171/embed"
+      src="https://flo.uri.sh/story/3098431/embed"
       frameborder="0"
       scrolling="no"
       title="Gráfico interactivo de Flourish2"
@@ -125,7 +123,7 @@
     <h3 class="subtitle"> La brecha se amplía: el consumo artesanal lidera con fuerza </h3>
       <div class = "graficos">
         <iframe
-        src="https://flo.uri.sh/visualisation/22667847/embed"
+        src="https://flo.uri.sh/story/3098462/embed"
         frameborder="0"
         scrolling="no"
         title="Gráfico interactivo de Flourish2"
@@ -196,25 +194,25 @@
 
   .subtitle {
     font-size: 40px; 
-    font-weight: 400; 
+    font-weight: 800; 
     text-align: center;
     color: #f78181; 
     margin-bottom: 20px; 
   }
 
   .titulo-helados {
-    font-size: 60px; 
+    font-size: 40px; 
     font-weight: bold; 
     text-align: center;
     color: #f78181; 
-    margin-bottom: 5px; 
+    margin-bottom: 50px; 
   }
 
   .text-box{
-    text-align: center;
-    text-wrap: balance;
-    font-size: 35px;
-    max-width: 76%;
+    text-align: left;
+    text-wrap: flex;
+    font-size: 32px;
+    max-width: 90%;
     padding: 10px;
 
   }
@@ -227,7 +225,7 @@
     height: auto;    
     margin-top: 20px;
     padding: 0;
-    margin-bottom: 20px;
+    margin-bottom: 10px;
   }
 
   .grafico-container {
@@ -248,8 +246,8 @@
     align-items: center;
     flex-grow: 1; 
     width: 100%;
-    margin-top: 45px;
-    margin-bottom: 45px;
+    margin-top: 50px;
+    margin-bottom: 2px;
   }
 
   .noticia-header {
