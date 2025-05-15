@@ -169,7 +169,7 @@
   }
 
   #container {
-    width: 90%;
+    width: 100%;
     padding: 0;
     margin: 0;
   }
@@ -237,7 +237,7 @@
     justify-content: center;
     align-items: center;
     flex-grow: 1; 
-    width: 70%;
+    width: auto;
     margin-top: 50px;
     margin-bottom: 2px;
   }
@@ -254,6 +254,7 @@
     height: 10vh;
     align-items: center;
     box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+    width: auto;
   }
 
   .categoria {

@@ -240,7 +240,7 @@
     }
     .helado-wrapper {
       position: relative;
-      width: 80%;
+      width: auto;
       height: auto;
       text-align: center;
       display: flex;
