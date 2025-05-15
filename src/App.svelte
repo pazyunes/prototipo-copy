@@ -58,9 +58,11 @@
       <p> El helado <span style = "color: #69B9FF">artesanal</span> conquista el paladar y el mercado </p>
     </div>
     <Leyenda />
+    <div class="page-center"> 
     <div class = "helados-wrapper">
       <Helado tabla={tabla} />
     </div>
+  </div>
     <div class = "text-box"> 
       <p> <b>El crecimiento del helado artesanal, visualizado en cada cucurucho</b> </p>
       <p>A través de helados que aumentan progresivamente en tamaño y opacidad, este gráfico ilustra de forma visual y atractiva 
@@ -72,9 +74,11 @@
     <div class="titulo-helados">
       <p> Helado <span style="color: #DE5D5D">industrial</span>: éxito fugaz, caída inevitable </p>
     </div>
+    <div class = "page-center">
     <div class = "helados-wrapper">
       <Helado tabla2={tabla2} />
     </div>
+  </div>
     <div class = "text-box"> 
       <p>  <b>Un consumo que tocó su techo y luego descendió </b> </p>
       <p>El gráfico representa el consumo per cápita de helado industrial desde 2015 hasta 2024. Se observa un crecimiento 
@@ -87,7 +91,7 @@
   </div>
 
   <div class = "grafico-container">
-    <h3 class="subtitle"> A partir del 2018 el helado <span style = "color: #69B9FF">artesanal</span> comienza a superar al <span style="color: #DE5D5D">industrial</span> </h3>
+    <h2 class="subtitle"> A partir del 2018 el helado <span style = "color: #69B9FF">artesanal</span> comienza a superar al <span style="color: #DE5D5D">industrial</span> </h2>
     <div class = "graficos">
       <iframe
       src="https://flo.uri.sh/story/3098431/embed"
@@ -111,7 +115,7 @@
   </div>
 
   <div class = "grafico-container">
-    <h3 class="subtitle"> La brecha se amplía: el consumo <span style = "color: #69B9FF">artesanal</span> lidera con fuerza </h3>
+    <h2 class="subtitle"> La brecha se amplía: el consumo <span style = "color: #69B9FF">artesanal</span> lidera con fuerza </h2>
       <div class = "graficos">
         <iframe
         src="https://flo.uri.sh/story/3098462/embed"
@@ -166,6 +170,7 @@
     font-family: 'Merriweather' , serif;
     height: auto;
     background-color: #f8f9fa;
+    overflow-x: hidden;
   }
 
   #container {
@@ -184,7 +189,7 @@
   }
 
   .subtitle {
-    font-size: 40px; 
+    font-size: 32px; 
     font-weight: 800; 
     text-align: center;
     color: black; 
@@ -192,7 +197,7 @@
   }
 
   .titulo-helados {
-    font-size: 40px; 
+    font-size: 32px; 
     font-weight: bold; 
     text-align: center;
     color: black; 
@@ -202,7 +207,7 @@
   .text-box{
     text-align: left;
     text-wrap: flex;
-    font-size: 30px;
+    font-size: 28px;
     max-width: 1300px;
     padding: 10px;
 
@@ -211,7 +216,7 @@
   .tamaños-container {
     display: flex;
     flex-direction: column;
-    justify-content: flex-start;
+    justify-content: center;
     align-items: center;
     height: auto;    
     margin-top: 20px;
@@ -220,6 +225,13 @@
     width: auto;
   }
 
+  .page-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 65vh; /* ocupa todo el alto de la pantalla */
+  width: 100vw;  /* ocupa todo el ancho */
+}
   .grafico-container {
     display: flex;
     flex-direction: column;
@@ -227,7 +239,7 @@
     align-items: center;
     height: auto;  
     border-radius: 10px; 
-    width: 100%;  
+    width: auto;  
     margin-top: 30px;
     padding: 0;
   }
@@ -237,6 +249,7 @@
     justify-content: center;
     align-items: center;
     flex-grow: 1; 
+    flex: 1 1 auto;
     width: auto;
     margin-top: 50px;
     margin-bottom: 2px;
@@ -296,7 +309,7 @@
     border-radius: 8px;
     color: #000000;
     box-shadow: 0 2px 6px rgba(0,0,0,0.05);
-    font-size: 30px;
+    font-size: 25px;
   }
 
   .sabias-que h4 {
