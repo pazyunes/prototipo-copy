@@ -57,6 +57,7 @@
     <div class="titulo-helados">
       <p> El helado <span style = "color: #69B9FF">artesanal</span> conquista el paladar y el mercado </p>
     </div>
+    <div class="mini-titulo"><p>Consumo per capita</p></div>
     <Leyenda />
     <div class="page-center"> 
     <div class = "helados-wrapper">
@@ -74,6 +75,8 @@
     <div class="titulo-helados">
       <p> Helado <span style="color: #DE5D5D">industrial</span>: éxito fugaz, caída inevitable </p>
     </div>
+    <div class="mini-titulo"><p>Consumo per capita</p></div>
+    <Leyenda />
     <div class = "page-center">
     <div class = "helados-wrapper">
       <Helado tabla2={tabla2} />
@@ -201,15 +204,24 @@
     font-weight: bold; 
     text-align: center;
     color: black; 
-    margin-bottom: 50px; 
+    margin-bottom: 0px; 
   }
 
   .text-box{
     text-align: left;
     text-wrap: flex;
     font-size: 28px;
+    max-width: 1200px;
+    padding: 10px;
+  }
+
+  .mini-titulo{
+    text-align: left;
+    text-wrap: flex;
+    font-size: 22px;
     max-width: 1300px;
     padding: 10px;
+    margin-top: 5px;
 
   }
 
@@ -289,7 +301,7 @@
   }
 
   .graficos {
-    width: 100%;
+    width: 80%;
     display: flex;
     justify-content: center;
     height: 70vh;
@@ -305,11 +317,12 @@
     background-color: #fff4f4;
     border-left: 5px solid #f08080;
     padding: 20px 25px;
-    margin: 40px 0;
+    margin: 40px auto;
     border-radius: 8px;
     color: #000000;
     box-shadow: 0 2px 6px rgba(0,0,0,0.05);
     font-size: 25px;
+    max-width: 1200px;
   }
 
   .sabias-que h4 {

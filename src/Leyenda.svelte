@@ -8,7 +8,7 @@
             <rect x="6" y="23.9474" width="44" height="46.0526" rx="3" fill="#D7B969"/>
           </svg>
         `,
-        texto: ": Consumo per capita entre 2.4 kg y 4.2 kg"
+        texto: ": Entre 0 kg y 5,4 kg"
       },
       {
         svg: `
@@ -17,7 +17,7 @@
             <rect x="14.0977" y="12.3422" width="95.8647" height="121.658" rx="3" fill="#D7B969"/>
           </svg>
         `,
-        texto: ": Consumo per capita entre 5.4 kg y 7.1 kg"
+        texto: ": Entre 5,4 kg y 7,7 kg"
       },
       {
         svg: `
@@ -25,7 +25,7 @@
             <path d="M87.5 236L0.464447 0.5H174.536L87.5 236Z" fill="#D7B969"/>
           </svg>
         `,
-        texto: ": Consumo per capita entre 7.7 kg y 9.8 kg"
+        texto: ": Entre 7,7 kg y 9.8 kg"
       }
     ];
   </script>
@@ -47,7 +47,7 @@
       flex-direction: row;
       flex-wrap: wrap;
       gap: 10px;
-      margin-top: 22px;
+      margin-top:8px;
       width: 100%;
       margin-bottom: 70px;
       padding: 6px;
@@ -58,7 +58,7 @@
       flex-direction: row;
       align-items: center;
       text-align: center;
-      width: 420px;
+      width: 250px;
     }
   
     .leyenda-item span {
