@@ -210,9 +210,10 @@
   .text-box{
     text-align: left;
     text-wrap: flex;
-    font-size: 28px;
-    max-width: 1200px;
+    font-size: 25px;
+    max-width: 900px;
     padding: 10px;
+    margin-bottom: 20px;
   }
 
   .mini-titulo{
@@ -321,7 +322,7 @@
     border-radius: 8px;
     color: #000000;
     box-shadow: 0 2px 6px rgba(0,0,0,0.05);
-    font-size: 25px;
+    font-size: 24px;
     max-width: 1200px;
   }
 
